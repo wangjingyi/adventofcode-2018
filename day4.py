@@ -1,7 +1,6 @@
 from collections import Counter, namedtuple, defaultdict
 import re
 
-
 Shift = namedtuple("Shift", 'minute cmd')
 
 def solution1():
