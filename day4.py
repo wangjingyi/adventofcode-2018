@@ -38,5 +38,4 @@ def data():
     with open('input.txt') as f:
         lines = [line for line in f]
         
-    lines.sort()
-    return [Shift(*reg.match(line).groups()) for line in lines]
+    return [Shift(*reg.match(line).groups()) for line in sorted(lines)]
