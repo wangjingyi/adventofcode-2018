@@ -59,37 +59,20 @@ def solution2():
     return ret
 
 def close_enough(point, all_points, distance):
-    d = 0
-    for p in all_points:
-        d += between(p, point)
-    
-    return d < distance
-
-            
+    return sum(between(p, point) for p in all_points) < distance
     
 def boundry_point(h, left_top, right_bottom):
     x1, y1 = left_top
     x2, y2 = right_bottom
     
-    s = set()
-    for x in range(x1, x2 + 1):
-        s1 = h[(x, y1)]
-        s2 = h[(x, y2)]
-        if len(s1) == 1:
-            s |= s1
-        if len(s2) == 1:
-            s |= s2
-            
-        
-    for y in range(y1, y2 + 1):
-        s1 = h[(x1, y)]
-        s2 = h[(x2, y)]
-        if len(s1) == 1:
-            s |= s1
-        if len(s2) == 1:
-            s |= s2
-        
-    return s
+    ret = set()
+    for s in h.values():
+        if len(s) == 1:
+            e = next(iter(s))
+            if e[0] in (x1, x2) or e[1] in (y1, y2):
+                ret.add(e)
+    return ret
+    
     
 def fill(location, point, h):
 
@@ -133,7 +116,3 @@ def data():
     r = re.compile(r'(\d+),\s+(\d+)')
     with open('input.txt') as f:
         return [tuple(map(int, r.match(line).groups())) for line in f]
-    
-            
-    
-
