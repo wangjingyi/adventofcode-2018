@@ -17,6 +17,5 @@ def solution2():
     return None
 
 def freq_changes():
-    with open('input.txt') as f:
+    with open('data/input_day01.txt') as f:
         return [int(line.strip()) for line in f]
-        

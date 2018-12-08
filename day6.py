@@ -114,5 +114,5 @@ def between(t1, t2):
 
 def data():
     r = re.compile(r'(\d+),\s+(\d+)')
-    with open('input.txt') as f:
+    with open('data/input_day06.txt') as f:
         return [tuple(map(int, r.match(line).groups())) for line in f]

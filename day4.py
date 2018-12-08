@@ -35,7 +35,7 @@ def arrange():
     
 def data():
     reg = re.compile("\[\d+-\d\d-\d\d\s+\d+:(\d+)\]\s(\w.+$)")
-    with open('input.txt') as f:
+    with open('data/input_day04.txt') as f:
         lines = [line for line in f]
         
     return [Shift(*reg.match(line).groups()) for line in sorted(lines)]

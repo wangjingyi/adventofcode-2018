@@ -34,8 +34,6 @@ def assign_work(worker, queue):
                 worker[idx] = time(cur), cur
                 break
                 
-
-                
 def process_work(worker, queue, parent, children):
     if all([t == 0 for t, _ in worker]):
         return 0
@@ -70,9 +68,8 @@ def process_queue(queue, cur, parent, children):
         
 def time(ch):
     return ord(ch) - ord('A') + 61
-   
     
 def data():
     reg = re.compile(r'Step ([A-Z]) must be finished before step ([A-Z]) can begin[.]')
-    with open('input.txt') as f:
+    with open('data/input_day07.txt') as f:
         return [reg.match(line.strip()).groups() for line in f]

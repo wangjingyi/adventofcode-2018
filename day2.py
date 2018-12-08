@@ -36,9 +36,7 @@ def one_difference(s1, s2):
             pos = i
     else:
         return True, pos  # because must have one
-
             
-        
 def data():
-    with open('input.txt') as f:
+    with open('data/input_day02.txt') as f:
         return [line.strip() for line in f]

@@ -32,7 +32,6 @@ def overlap(r1, r2):
         return False
     
     return True
-        
 
 def fill(rect, m):
     for row in range(rect.y, rect.y + rect.h):
@@ -61,12 +60,8 @@ def update(rect, row):
 def data():
     reg = re.compile(r"#(\d+)\s+@\s+(\d+),(\d+):\s+(\d+)x(\d+)")
     ret = []
-    with open("input.txt") as f:
+    with open("data/input_day03.txt") as f:
         for line in f:
             tup = map(int, reg.match(line).groups())         
             ret.append(Rect(*tuple(tup)))
     return ret
-
-        
-    
-        

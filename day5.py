@@ -33,10 +33,5 @@ def react(s, bad_unit = None):
 
 
 def data():
-    with open('input.txt') as f:
+    with open('data/input_day05.txt') as f:
         return f.read().replace('\n', '')
-    
-
-
-
-        
