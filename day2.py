@@ -21,7 +21,6 @@ def solution2():
                 return id1[:pos] + id1[pos + 1:]
             
     return None
-    
 
 def one_difference(s1, s2):
     if len(s1) != len(s2):
