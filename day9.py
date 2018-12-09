@@ -5,12 +5,6 @@ def solution1():
 
 def solution2():
     return play(424, 71482 * 100)
-
-@dataclass
-class Node:
-    value: int
-    next: 'Node' = field(init=False, default=None)
-    prev: 'Node' = field(init=False, default=None)
     
 def play(num_of_player, last_point):
     players = [0] * num_of_player
@@ -22,6 +16,12 @@ def play(num_of_player, last_point):
     
     return max(players)
 
+@dataclass
+class Node:
+    value: int
+    next: 'Node' = field(init=False, default=None)
+    prev: 'Node' = field(init=False, default=None)
+    
 # too much delete and insert, so double linked list should be a good way to go
 class DoubleList:
     def __init__(self):
