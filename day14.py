@@ -16,8 +16,9 @@ def scores(a, b, stop=INPUT):
     ret = [a, b]
     
     while len(ret) < stop + 10:
-        s = ret[idx_a] + ret[idx_b]
-        ret.extend(break_digits(s))
+        nsum = ret[idx_a] + ret[idx_b]
+        digits = break_digits(nsum)
+        ret.extend(digits)
         idx_a = (idx_a + ret[idx_a] + 1) % len(ret)
         idx_b = (idx_b + ret[idx_b] + 1) % len(ret)
     
@@ -47,4 +48,3 @@ def solution1():
 
 def solution2():
     return search_score(3, 7)
-    
